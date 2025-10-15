@@ -1,6 +1,8 @@
 import {
+  forgotPassword,
   protectedRoute,
   publicRoute,
+  resetPassword,
   signin,
   signup,
 } from "../controllers/authController.js";
@@ -18,4 +20,6 @@ router.post("/signin", signin);
 router.get("/protected", authMiddleware, protectedRoute);
 router.get("/public", publicRoute);
 
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password/:token", resetPassword);
 export default router;
